@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "dota2_stats"
+require 'yaml'
+require 'pry'
+
+yaml_file = YAML.load_file(File.join(File.dirname(File.expand_path(__FILE__)), '../config/dota2_stats.yml'))
+
+Dota2Stats.configure do |config|
+  config.base_url = yaml_file['base_url']
+  config.steam_api_key = yaml_file['steam_api_key']
+end
+
+Pry.start

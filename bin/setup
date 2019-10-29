@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+bundle install
+
+ECHO "Copying sample dota2 demo app direct config: "
+cp -f -n config/dota2_stats.yml.sample config/dota2_stats.yml
