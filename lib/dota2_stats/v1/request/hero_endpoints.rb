@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 module Dota2Stats
   module V1
     module Request
       module HeroEndpoints
-        HERO_ROOT = '/IEconDOTA2_570/GetHeroes/v1'
+        HERO_ROOT = '/IEconDOTA2_570/GetHeroes/v1'.freeze
 
         def get_heroes
           endpoint = HERO_ROOT

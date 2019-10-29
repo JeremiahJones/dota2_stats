@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 describe Dota2Stats::V1::Client do
   describe 'endpoints for heroes' do
     let(:response) do

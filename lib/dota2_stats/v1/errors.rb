@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Dota2Stats
   module V1
     class Errors < StandardError

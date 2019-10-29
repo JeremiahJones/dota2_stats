@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'dota2_stats/v1/response'
 
 # Requests

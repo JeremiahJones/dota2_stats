@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 module Dota2Stats
   module V1
     module Request
       module MatchEndpoints
-        MATCH_ROOT = 'IDOTA2Match_570'
+        MATCH_ROOT = 'IDOTA2Match_570'.freeze
 
         def get_match_history(options = {})
           endpoint = '/GetMatchHistory/v1'

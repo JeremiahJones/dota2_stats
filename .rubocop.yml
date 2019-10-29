@@ -1,78 +1,122 @@
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
-    - 'db/schema.rb'
-    - 'vendor/**/*'
-    - 'tmp/**/*'
     - 'bin/**/*'
-    - 'log/**/*'
-    - 'node_modules/**/*'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'ssl/**/*'
+    - 'spec/factories/**/*'
 
+# Styles that are modified from the defaults
 
-Style/AlignHash:
+Style/AndOr:
+  Description: >-
+    Whether `and` and `or` are banned only in conditionals (conditionals)
+    or completely (always).
+  StyleGuide: 'https://git.moneydesktop.com/dev/ruby-style-guide#use-and-or-or-control-flow'
+  EnforcedStyle: conditionals
+
+Style/BlockDelimiters:
+  Description: >-
+    Avoid using {...} for multi-line blocks (multiline chaining is
+    always ugly).
+    Prefer {...} over do...end for single-line blocks.
+  StyleGuide: 'https://git.moneydesktop.com/dev/ruby-style-guide#single-line-blocks'
+  Exclude:
+    - 'spec/**/*'
+
+Style/BracesAroundHashParameters:
+  Exclude:
+    - 'Capfile'
+
+Style/RescueModifier:
+  Description: 'Avoid using rescue in its modifier form.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-rescue-modifiers'
+  # Enabled: true
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+
+#################### Layout ##############################
+
+Layout/BlockEndNewline:
+  Description: 'Put end statement of multiline block on its own line.'
+  Exclude:
+    - 'spec/**/*'
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStyles:
+    - space
+    - no_space
+  Exclude:
+    - 'spec/**/*'
+
+#################### Lint ################################
+
+Lint/ParenthesesAsGroupedExpression:
+  Description: >-
+    Checks for method calls with a space before the opening
+    parenthesis.
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#parens-no-spaces'
+  Exclude:
+    - 'spec/**/*'
+
+# Need to pass in empty arrays to satisfy num of arguments for specs
+Lint/UselessAssignment:
   Enabled: true
-  # table - left alignment of keys, hash rockets, and values
-  #   'a' => 2
-  #   'bb' => 3
-  EnforcedHashRocketStyle: key
-  # table - left alignment of keys and values
-  #   a: 0
-  #   bb: 1
-  EnforcedColonStyle: key
+  Exclude:
+    - 'spec/**/*'
 
-  EnforcedLastArgumentHashStyle: always_inspect
-  SupportedLastArgumentHashStyles:
-    - always_inspect
-    - always_ignore
-    - ignore_implicit
-    - ignore_explicit
-Style/DoubleNegation:
+#################### Rails ################################
+
+Rails:
+  Enabled: true # include Rails cops
+
+Rails/Output:
+  Exclude:
+    - 'config/**/*'
+
+Metrics/AbcSize:
+  Max: 55
+
+Metrics/CyclomaticComplexity:
+  Max: 18
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 278
+
+Metrics/LineLength:
   Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 18
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/ClassAndModuleChildren:
-  # `compact` - combine definitions as much as possible
-  #   class Foo::Bar
-  #   end
-  #
-  # The compact style is only forced, for classes / modules with one child.
-  EnforcedStyle: compact
-Style/TrailingCommaInLiteral:
-  EnforcedStyleForMultiline: 'comma'
-
-Style/EachWithObject:
   Enabled: false
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-  Enabled: true
-
-Style/StringLiteralsInInterpolation:
-  EnforcedStyle: double_quotes
-  Enabled: true
-
-Style/MethodDefParentheses:
-  EnforcedStyle: require_parentheses
-  Enabled: true
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-BracesAroundHashParameters:
-  EnforcedStyle: braces
 
 Style/Documentation:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 140
+# Configuration parameters: MinBodyLength.
+Style/GuardClause:
+  Enabled: false
 
-Metrics/ClassLength:
-  Max: 150
-  Exclude:
-    - 'test/**/*'
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
-Metrics/AbcSize:
-  Max: 20
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
 
-Metrics/MethodLength:
-  Max: 20
-  Exclude:
-    - 'test/**/*'
+Naming/VariableNumber:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

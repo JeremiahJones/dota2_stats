@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 describe Dota2Stats::V1::Response::Heroes do
   let(:response) { load_fixture('heroes.json') }
 

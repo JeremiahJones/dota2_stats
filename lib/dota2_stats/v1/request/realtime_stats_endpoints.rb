@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 module Dota2Stats
   module V1
     module Request
       module RealtimeStatsEndpoints
-        REALTIME_STATS_ROOT = 'IDOTA2MatchStats_570'
+        REALTIME_STATS_ROOT = 'IDOTA2MatchStats_570'.freeze
 
         def get_realtime_stats
           endpoint = '/GetRealtimeStats/v1'

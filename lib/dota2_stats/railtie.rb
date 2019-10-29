@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Dota2Stats
   class Railtie < Rails::Railtie
     config.dota2_stats = Dota2Stats.config

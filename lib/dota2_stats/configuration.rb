@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Dota2Stats
   class Configuration
     attr_accessor :base_url,
