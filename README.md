@@ -2,8 +2,6 @@
 
 App that connects to the dota open api to be used to create dota 2 information for a player to help improve their gameplay
 
-TODO: how to implement logger
-
 ## Usage
 
 first `bin/setup` to create yml files for console testings
