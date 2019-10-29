@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Jeremiah Jones']
   spec.email         = ['jeremiah-jones@outlook.com']
 
-  spec.summary       = 'App to utilize the DOTA 2 OPEN API and get data for player profile creation'
-  spec.description   = 'App to utilize the DOTA 2 OPEN API and get data for player profile creation'
+  spec.summary       = 'App to utilize the DOTA 2 API and get data for player profile creation'
+  spec.description   = 'App to utilize the DOTA 2 API and get data for player profile creation'
   spec.homepage      = 'https://github.com/JeremiahJones/dota2_stats'
   spec.license       = 'MIT'
 
